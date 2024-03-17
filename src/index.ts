@@ -375,7 +375,7 @@ app.post("/api/start-innings", async (req, res) => {
   res.send();
 });
 
-app.get("/api/user", checkJwt, async (req, res) => {
+app.get("/user", checkJwt, async (req, res) => {
   const usersCol = mongoClient.db(dbName).collection("users");
   const matchesCol = mongoClient.db(dbName).collection("matches");
   const teamsCol = mongoClient.db(dbName).collection("teams");
