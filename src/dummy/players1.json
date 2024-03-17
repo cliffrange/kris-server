@@ -1,0 +1,77 @@
+[
+  {
+    "lastName": "Alexander",
+    "firstName": "Scott",
+    "role": "Batter"
+  },
+  {
+    "lastName": "Dyer",
+    "firstName": "Gordon",
+    "role": "Bowler"
+  },
+  {
+    "lastName": "Howard",
+    "firstName": "Alan",
+    "role": "Batter"
+  },
+  {
+    "lastName": "Davidson",
+    "firstName": "Jacob",
+    "role": "Batter"
+  },
+  {
+    "lastName": "Edmunds",
+    "firstName": "Christopher",
+    "role": "Batter"
+  },
+  {
+    "lastName": "Turner",
+    "firstName": "Trevor",
+    "role": "Batter"
+  },
+  {
+    "lastName": "Lawrence",
+    "firstName": "Jake",
+    "role": "Batter"
+  },
+  {
+    "lastName": "Eric",
+    "firstName": "MacDonald",
+    "role": "Batter"
+  },
+  {
+    "lastName": "Morgan",
+    "firstName": "Neil",
+    "role": "All Rounder"
+  },
+  {
+    "lastName": "MacLeod",
+    "firstName": "Lucas",
+    "role": "Batter"
+  },
+  {
+    "lastName": "Duncan",
+    "firstName": "Anthony",
+    "role": "Bowler"
+  },
+  {
+    "lastName": "Ogden",
+    "firstName": "Kevin",
+    "role": "Bowler"
+  },
+  {
+    "lastName": "Ferguson",
+    "firstName": "Harry",
+    "role": "Bowler"
+  },
+  {
+    "lastName": "Gibson",
+    "firstName": "Leonard",
+    "role": "Bowler"
+  },
+  {
+    "lastName": "Springer",
+    "firstName": "Robert",
+    "role": "Bowler"
+  }
+]
