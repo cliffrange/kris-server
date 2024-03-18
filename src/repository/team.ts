@@ -1,4 +1,4 @@
-import { SavedTeam } from "cricket-scorer-store";
+import { SavedTeam } from "@cliffrange/kris-store";
 import { addTeam } from "./user";
 
 let teamsCol;
@@ -10,7 +10,7 @@ export function init(mongoClient, dbName, colName) {
 export async function createTeam(
   matchID: string,
   match: SavedTeam,
-  user: string,
+  user: string
 ) {
   const { ops } = await teamsCol.insertOne({ _id: matchID, ...match });
   const newTeam = {

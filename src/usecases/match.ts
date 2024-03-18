@@ -12,7 +12,7 @@ import {
   initialExtras,
   initialManhatten,
   initialWorm,
-} from "cricket-scorer-store";
+} from "@cliffrange/kris-store";
 
 import { createMatch as CreateMatchDB } from "../repository/match";
 import { addMatch } from "../repository/user";

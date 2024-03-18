@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const jwt = require("express-jwt");
+const { expressjwt: jwt } = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
-const shortid = require("shortid");
+const nanoid = require("nanoid");
 const { MongoClient } = require("mongodb");
 const amqp = require("amqplib");
 const fileUpload = require("express-fileupload");
@@ -36,7 +36,7 @@ import {
   Player,
   scoreStreamStates,
   PickedTeam,
-} from "cricket-scorer-store";
+} from "@cliffrange/kris-store";
 import { createMatch, CreateMatchInput } from "./usecases/match";
 import { CreateTeamInput, createTeam } from "./usecases/team";
 
@@ -58,10 +58,9 @@ const checkJwt = jwt({
     jwksRequestsPerMinute: 5,
     jwksUri: `https://${authConfig.domain}/.well-known/jwks.json`,
   }),
-
   audience: authConfig.audience,
   issuer: `https://${authConfig.domain}/`,
-  algorithm: ["RS256"],
+  algorithms: ["RS256"],
 });
 
 app.use(bodyParser.json());
@@ -140,7 +139,7 @@ app.post("/api/select-bowler", async (req, res) => {
 });
 
 app.post("/api/create-dummy-match", checkJwt, async (req, res) => {
-  const team1ID = shortid.generate();
+  const team1ID = nanoid();
   const team1: CreateTeamInput = {
     teamID: team1ID,
     teamName: "Aligators",
@@ -149,7 +148,7 @@ app.post("/api/create-dummy-match", checkJwt, async (req, res) => {
   };
   await createTeam(team1);
 
-  const team2ID = shortid.generate();
+  const team2ID = nanoid();
   const team2: CreateTeamInput = {
     teamID: team2ID,
     teamName: "Crawlers",
@@ -192,7 +191,7 @@ app.post("/api/bulk/players", checkJwt, async (req, res) => {
       .toLowerCase()}`;
 
     if (!teams[teamName]) {
-      const teamID = shortid.generate();
+      const teamID = nanoid();
       const team: CreateTeamInput = {
         teamID: teamID,
         teamName: teamName,
@@ -472,7 +471,7 @@ app.post("/api/edit-team/:id", async (req, res) => {
   const { teamName, newPlayers } = reqBody;
   const result = await playersCol.insertMany(
     newPlayers.map(({ firstName, lastName, role }) => ({
-      _id: shortid.generate(),
+      _id: nanoid(),
       firstName,
       lastName,
       role,

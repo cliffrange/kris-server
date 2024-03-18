@@ -1,4 +1,4 @@
-import { Player, SavedTeam } from "cricket-scorer-store";
+import { Player, SavedTeam } from "@cliffrange/kris-store";
 import { createTeam as CreateTeamDB } from "../repository/team";
 import { createPlayers as CreatePlayersDB } from "../repository/players";
 
